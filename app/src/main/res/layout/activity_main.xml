@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#BCC5B2"
+    tools:openDrawer="start"
+    android:id="@+id/drawerLayout"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue"
+            app:title="@string/app_name"
+            app:navigationIcon="@drawable/menu"
+            app:menu="@menu/top_menu"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+<!--################################ MAIN DESIGN ##############################-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Determine the weight of cow"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#220850"
+        android:fontFamily="@font/robotocondensed_black"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Length of cow (inches):"
+        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#220850"
+        android:fontFamily="@font/roboto_blackitalic"
+        />
+
+    <EditText
+        android:id="@+id/edDoirgo"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="15"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:hint="60"
+        android:inputType="numberDecimal"
+        />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chest girth (inches):"
+        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#220850"
+        android:fontFamily="@font/roboto_blackitalic"
+        />
+
+    <EditText
+        android:id="@+id/edBer"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="15"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:hint="50"
+        android:inputType="numberDecimal"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_cal"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Calculate"
+        android:textSize="22sp"
+        android:fontFamily="@font/robotocondensed_black"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/orange_button"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results here"
+        android:textSize="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_medium"
+        />
+
+
+    <TextView
+        android:id="@+id/tvresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#220850"
+        android:padding="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/robotocondensed_medium"
+        android:background="@drawable/edit_text_border"
+        />
+
+    <TextView
+        android:id="@+id/tvShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="#06010E"
+        android:padding="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/robotocondensed_medium"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_clear"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:text="Clear All"
+        android:textSize="22sp"
+        android:fontFamily="@font/robotocondensed_black"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orange_button"
+        android:visibility="gone"
+        />
+
+    </LinearLayout>
+    </ScrollView>
+<!--################################ MAIN DESIGN ##############################-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--############################ NAVIGATION DRAWER ############################-->
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_layout"
+        app:menu="@menu/nav_menu"
+        />
+
+<!--############################ NAVIGATION DRAWER ############################-->
+
+</androidx.drawerlayout.widget.DrawerLayout>
